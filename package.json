@@ -1,0 +1,67 @@
+{
+  "name": "class-deferred",
+  "version": "1.0.0",
+  "description": "Basic javascript deferred implementation extends Promise class",
+  "main": "lib/deferred.js",
+  "module": "src/deferred.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/deferred.js",
+      "require": "./lib/deferred.js"
+    }
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "prepare": "postinstall"
+  },
+  "prepare": {
+    "./src/deferred.js": "bundle --format=cjs lib/deferred.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapouer/class-deferred.git"
+  },
+  "keywords": [
+    "deferred",
+    "promise"
+  ],
+  "author": "Jérémy Lal <kapouer@melix.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kapouer/class-deferred/issues"
+  },
+  "homepage": "https://github.com/kapouer/class-deferred#readme",
+  "devDependencies": {
+    "@kapouer/eslint-config": "^1.6.2",
+    "eslint-plugin-jest": "^26.2.2",
+    "jest": "^28.1.0",
+    "postinstall": "^0.7.4",
+    "postinstall-bundle": "^0.7.4"
+  },
+  "eslintConfig": {
+    "extends": "@kapouer/eslint-config",
+    "ignorePatterns": [
+      "lib/*"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "src/*.js"
+        ],
+        "env": {
+          "es6": true
+        }
+      },
+      {
+        "files": [
+          "*.test.js"
+        ],
+        "env": {
+          "jest/globals": true
+        },
+        "plugins": ["jest"]
+      }
+    ]
+  }
+}
