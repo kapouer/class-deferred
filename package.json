@@ -1,6 +1,6 @@
 {
   "name": "class-deferred",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic javascript deferred implementation extends Promise class",
   "main": "lib/deferred.cjs",
   "module": "src/deferred.js",
@@ -60,7 +60,9 @@
         "env": {
           "jest/globals": true
         },
-        "plugins": ["jest"]
+        "plugins": [
+          "jest"
+        ]
       }
     ]
   }
