@@ -2,13 +2,13 @@
   "name": "class-deferred",
   "version": "1.0.0",
   "description": "Basic javascript deferred implementation extends Promise class",
-  "main": "lib/deferred.js",
+  "main": "lib/deferred.cjs",
   "module": "src/deferred.js",
   "type": "module",
   "exports": {
     ".": {
       "import": "./src/deferred.js",
-      "require": "./lib/deferred.js"
+      "require": "./lib/deferred.cjs"
     }
   },
   "scripts": {
@@ -16,7 +16,7 @@
     "prepare": "postinstall"
   },
   "prepare": {
-    "./src/deferred.js": "bundle --format=cjs lib/deferred.js"
+    "./src/deferred.js": "bundle --format=cjs lib/deferred.cjs"
   },
   "repository": {
     "type": "git",
